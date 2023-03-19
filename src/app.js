@@ -8,7 +8,7 @@ import authRoute from './routes/auth.routes'
 const app = express()
 
 app.set('pkg', pkg)
-
+app.use(express.json())
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
