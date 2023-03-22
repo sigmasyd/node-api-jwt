@@ -3,6 +3,8 @@ const router = Router()
 
 import * as authCTRL from '../controllers/auth.controller'
 
-router.get('/', authCTRL.getAuth)
+router.post('/signup', authCTRL.signUp)
+
+router.post('/signin', authCTRL.signIn)
 
 export default router

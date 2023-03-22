@@ -1,0 +1,27 @@
+###
+GET http://localhost:4000/api/products
+
+###
+GET http://localhost:4000/api/products/64173f239d20885daa1f2bd1
+
+###
+POST http://localhost:4000/api/products
+Content-Type: application/json
+
+{
+  "name": "testing",
+  "category": "monitores",
+  "price": 350,
+  "imgURL": "https://http2.mlstatic.com/D_NQ_NP_772309-MEC54028022777_022023-O.webp"
+}
+
+###
+PUT http://localhost:4000/api/products/64175ae870b89a4a8dc072f9
+Content-Type: application/json
+
+{
+  "name": "LG 32'"
+}
+
+###
+DELETE http://localhost:4000/api/products/64173f239d20885daa1f2bd1

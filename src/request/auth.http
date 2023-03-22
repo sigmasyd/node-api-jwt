@@ -1,0 +1,12 @@
+###
+POST http://localhost:4000/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "sigma",
+  "email": "sigma.syd@gmail.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:4000/api/auth/signin
