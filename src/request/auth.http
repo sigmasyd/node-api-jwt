@@ -1,4 +1,4 @@
-###
+### user 1
 POST http://localhost:4000/api/auth/signup
 Content-Type: application/json
 
@@ -6,6 +6,20 @@ Content-Type: application/json
   "username": "sigma",
   "email": "sigma.syd@gmail.com",
   "password": "password"
+}
+
+### user 1
+POST http://localhost:4000/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "fbarcos",
+  "email": "fbarcos8@hotmail.com",
+  "password": "password",
+  "roles": [
+    "admin",
+    "moderator"
+  ]
 }
 
 ###
