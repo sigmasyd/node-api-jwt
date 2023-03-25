@@ -1,0 +1,33 @@
+### user not found
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "fbarcos81@hotmail.com"
+}
+
+### user found but password invalid
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "fbarcos8@hotmail.com",
+  "password": "123456"
+}
+
+### user found but password is missing
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "fbarcos8@hotmail.com"
+}
+
+### user found and password is ok
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "fbarcos8@hotmail.com",
+  "password": "password"
+}
