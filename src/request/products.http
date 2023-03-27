@@ -4,7 +4,7 @@ GET http://localhost:4000/api/products
 ###
 GET http://localhost:4000/api/products/64173f239d20885daa1f2bd1
 
-###
+### creating new product
 POST http://localhost:4000/api/products
 Content-Type: application/json
 
@@ -23,5 +23,61 @@ Content-Type: application/json
   "name": "LG 32'"
 }
 
-###
+### delete a product 
 DELETE http://localhost:4000/api/products/64173f239d20885daa1f2bd1
+
+### creating new product with verify token
+POST http://localhost:4000/api/products
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxYmQzYzBkZjZmYTBlZTcwOWJlYiIsImlhdCI6MTY3OTkyMTIzOCwiZXhwIjoxNjgwMDA3NjM4fQ.aZ7mfoxLlEzeSq49Az1aWr-7H3wbjfCcsxrjp42J87g
+
+{
+  "name": "Lenovo L1",
+  "category": "laptops",
+  "price": 350,
+  "imgURL": "https://http2.mlstatic.com/D_NQ_NP_772309-MEC54028022777_022023-O.webp"
+}
+
+### creating new product with invalid token
+POST http://localhost:4000/api/products
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxYmQzYzBkZjZmYTBlZTcwOWJlYiIsImlhdCI6MTY3OTkyMTIzOCwiZXhwIjoxNjgwMDA3NjM4fQ.aZ7mfoxLlEzeSq49Az1aWr-7H3wbjfCcsxrjp42J88g
+
+{
+  "name": "Samsumg Ultrawide",
+  "category": "monitores",
+  "price": 350,
+  "imgURL": "https://http2.mlstatic.com/D_NQ_NP_772309-MEC54028022777_022023-O.webp"
+}
+
+### creating new product with valid token y 2 role
+POST http://localhost:4000/api/products
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxYmQzYzBkZjZmYTBlZTcwOWJlYiIsImlhdCI6MTY3OTkyMTIzOCwiZXhwIjoxNjgwMDA3NjM4fQ.aZ7mfoxLlEzeSq49Az1aWr-7H3wbjfCcsxrjp42J87g
+
+{
+  "name": "Samsumg Ultrawide",
+  "category": "monitores",
+  "price": 350,
+  "imgURL": "https://http2.mlstatic.com/D_NQ_NP_772309-MEC54028022777_022023-O.webp"
+}
+
+### creating new product with valid token y none role
+POST http://localhost:4000/api/products
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxZDk1NjM0Y2RhOTRjMmVlMTdmZSIsImlhdCI6MTY3OTk1MjkyMiwiZXhwIjoxNjgwMDM5MzIyfQ.I8KPPVF9qxHTMLcW71G-gQUq9RTq9KeogfEyTI-qy3M
+
+{
+  "name": "Samsumg Ultrawide",
+  "category": "monitores",
+  "price": 350,
+  "imgURL": "https://http2.mlstatic.com/D_NQ_NP_772309-MEC54028022777_022023-O.webp"
+}
+
+### delete a product with token and without role
+DELETE http://localhost:4000/api/products/64220c64349e450f0cdcc2fc
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxZDk1NjM0Y2RhOTRjMmVlMTdmZSIsImlhdCI6MTY3OTk1MjkyMiwiZXhwIjoxNjgwMDM5MzIyfQ.I8KPPVF9qxHTMLcW71G-gQUq9RTq9KeogfEyTI-qy3M
+
+### delete a product with token and 2 role
+DELETE http://localhost:4000/api/products/64220c64349e450f0cdcc2fc
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxYmQzYzBkZjZmYTBlZTcwOWJlYiIsImlhdCI6MTY3OTkyMTIzOCwiZXhwIjoxNjgwMDA3NjM4fQ.aZ7mfoxLlEzeSq49Az1aWr-7H3wbjfCcsxrjp42J87g

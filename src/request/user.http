@@ -23,11 +23,20 @@ Content-Type: application/json
   "email": "fbarcos8@hotmail.com"
 }
 
-### user found and password is ok
+### user found and password is ok with 2 roles
 POST http://localhost:4000/api/auth/signin
 Content-Type: application/json
 
 {
   "email": "fbarcos8@hotmail.com",
+  "password": "password"
+}
+
+### user found and password is ok without role
+POST http://localhost:4000/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "sigma.syd@gmail.com",
   "password": "password"
 }
