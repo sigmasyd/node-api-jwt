@@ -40,3 +40,37 @@ Content-Type: application/json
   "email": "sigma.syd@gmail.com",
   "password": "password"
 }
+
+### create user with token without role
+POST http://localhost:4000/api/users/
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxZDk1NjM0Y2RhOTRjMmVlMTdmZSIsImlhdCI6MTY3OTk1MjkyMiwiZXhwIjoxNjgwMDM5MzIyfQ.I8KPPVF9qxHTMLcW71G-gQUq9RTq9KeogfEyTI-qy3M
+
+{
+  "email": "fbarcos8@hotmail.com",
+  "password": "password"
+}
+
+### create user with token with admin role but role param does'nt exists
+POST http://localhost:4000/api/users/
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxYmQzYzBkZjZmYTBlZTcwOWJlYiIsImlhdCI6MTY3OTkyMTIzOCwiZXhwIjoxNjgwMDA3NjM4fQ.aZ7mfoxLlEzeSq49Az1aWr-7H3wbjfCcsxrjp42J87g
+
+{
+  "username":"cbarcos",
+  "email": "carlosbarcos@outlook.com",
+  "password": "password",
+  "roles": ["superadmin","writer"]
+}
+
+### create user with token with admin role but role param right
+POST http://localhost:4000/api/users/
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWIxYmQzYzBkZjZmYTBlZTcwOWJlYiIsImlhdCI6MTY3OTkyMTIzOCwiZXhwIjoxNjgwMDA3NjM4fQ.aZ7mfoxLlEzeSq49Az1aWr-7H3wbjfCcsxrjp42J87g
+
+{
+  "username":"cbarcos",
+  "email": "carlosbarcos@outlook.com",
+  "password": "password",
+  "roles": ["admin"]
+}
